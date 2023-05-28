@@ -18,7 +18,7 @@ if($_POST['submit']){
         }
     }else{
         $_SESSION['status'] = 'Invalid Username or Password';
-        header('Location: ' . $home . 'index.php');
+        header('Location: ' . $home . 'admin/index.php');
         return;
     }
 }
