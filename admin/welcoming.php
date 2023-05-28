@@ -105,7 +105,7 @@ if ($result->num_rows > 0) {
               <!-- Name -->
               <div class="col-md-12">
                 <label for="username" class="form-label">Starter for About</label>
-                <textarea type="text" class="form-control" value="<?= $business_starter ?>" id="username" name="aboutstarter" style="width:500px; height:100px;"></textarea>
+                <textarea type="text" class="form-control" value="<?= $business_starter ?>" id="username" name="aboutstarter" style="width:500px; height:100px;"><?= $business_about ?></textarea>
               </div>
               <div class="col-md">
                 <input type="submit" name="register" class="btn btn-primary" value="Update Business About Starter">
@@ -119,7 +119,7 @@ if ($result->num_rows > 0) {
               <!-- Name -->
               <div class="col-md-12">
                 <label for="username" class="form-label">About Business</label>
-                <textarea type="text" class="form-control" value="<?= $business_about ?>" id="username" name="about" style="width:500px; height:300px;"></textarea>
+                <textarea type="text" class="form-control" value="<?= $business_about ?>" id="username" name="about" style="width:500px; height:300px;"><?= $business_about ?></textarea>
               </div>
               <div class="col-md">
                 <input type="submit" name="register" class="btn btn-primary" value="Update Business About">

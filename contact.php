@@ -1,5 +1,5 @@
 <?php
-include '../includes/connection.php';
+include 'includes/connection.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -10,7 +10,7 @@ require 'phpmailer/src/SMTP.php';
 if (isset($_POST['submit'])) {
     $user = $_POST['email'];
     $name = $_POST['name'];
-    $subject = 'Mine Ditse Shop | Feedback: ' . $_POST['subject'];
+    $subject = 'Buenaroa | Feedback: ' . $_POST['subject'];
     // $message = $_POST['message'];
 
     $message = ' 
@@ -22,9 +22,10 @@ if (isset($_POST['submit'])) {
     </head>
     
     <body>
-        <p> Hello Dear Client, <strong>' . $name . '!</strong></p>
+        <p> Hi, <strong>' . $name . '!</strong></p>
     
-        <p> We have received your message and we will reply as soon as possible within 48 hours.
+        <p> Thank you for visiting our website and spending your time to send an email. This is to acknowledge
+            that we have received your message and we will reply as soon as possible within 48 hours.
     
             <br><br>
     
@@ -47,17 +48,17 @@ if (isset($_POST['submit'])) {
     $mail->isSMTP();
     $mail->Host = 'smtp.hostinger.com';
     $mail->SMTPAuth = 'true';
-    $mail->Username = 'connect@buenaroa.store';
+    $mail->Username = 'inquire@buenaroa.store';
     $mail->Password = 'cayCay18*';
     $mail->SMTPSecure = 'tls';
     $mail->Port = '587';
 
-    $mail->setFrom('connect@buenaroa.store', 'Buenaroa');
+    $mail->setFrom('inquire@buenaroa.store', 'Buenaroa');
     $mail->addAddress($user);
     $mail->isHTML(true);
     $mail->Subject = $subject;
     $mail->Body = $message;
     $mail->send();
 
-    header('Location: ' . $home . 'index.php');
+    header('Location: ' . $home .  'index.php');
 }

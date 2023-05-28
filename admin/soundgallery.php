@@ -3,6 +3,8 @@
 
 <head>
     <?php
+    include '../includes/connection.php';
+    include '../includes/auth.php';
     include('components/header.php');
     ?>
 </head>
