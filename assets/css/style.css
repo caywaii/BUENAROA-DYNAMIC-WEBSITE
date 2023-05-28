@@ -44,7 +44,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #85b0be;
+  background: #A0806E;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -58,7 +58,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #a0c1cc;
+  background: #A0806E;
   color: #fff;
 }
 
@@ -1263,8 +1263,8 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: url("../img/footer-bg.jpg") top center no-repeat;
-  color: #fff;
+  background: url("../img/footerdesign.jpg") top center no-repeat;
+  color: #593127;
   font-size: 14px;
   position: relative;
 }
@@ -1276,7 +1276,7 @@ section {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(1, 11, 16, 0.6);
+  background: #ffebcd97;
   z-index: 1;
 }
 
@@ -1290,7 +1290,7 @@ section {
 #footer .footer-top h3 {
   font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: #593127;
   position: relative;
   font-family: "Poppins", sans-serif;
   padding-bottom: 0;
@@ -1352,7 +1352,7 @@ section {
 #footer .footer-top .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #85b0be;
+  background: #A0806E;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1365,7 +1365,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #649aac;
+  background: #FFEBCD;
   color: #fff;
   text-decoration: none;
 }
