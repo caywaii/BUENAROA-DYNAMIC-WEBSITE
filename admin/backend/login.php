@@ -14,7 +14,7 @@ if($_POST['submit']){
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             $_SESSION['auth_id'] = $row['id'];
-            header('Location: ' . $home . 'admin/dashboard.php');
+            header('Location: ' . $home . 'admin/welcoming.php');
         }
     }else{
         $_SESSION['status'] = 'Invalid Username or Password';

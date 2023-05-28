@@ -57,16 +57,20 @@ if ($result->num_rows > 0) {
           <label for="username" class="form-label">Business Name</label>
           <input type="text" class="form-control" value="<?= $business_name ?>" id="username" name="busname" style="width:800px;">
         </div>
-
-        <br>
-        <!-- Motto -->
+        <div class="col-md" align="center">
+          <input type="submit" name="register" class="btn btn-primary" value="Update Business Name">
+        </div>
+      </form>
+      <br>
+      <!-- Motto -->
+      <form action="backend/updatemotto.php" method="post" class="row g-2">
         <div class="col-md-12" align="center">
           <label for="userpassword" class="form-label">Motto</label>
           <input type="text" class="form-control" value="<?= $business_motto ?>" id="userpassword" name="busmotto" style="width:800px;">
         </div>
         <br>
         <div class="col-md" align="center">
-          <input type="submit" name="register" class="btn btn-primary" value="Update Business Branding">
+          <input type="submit" name="register" class="btn btn-primary" value="Update Motto">
         </div>
       </form>
 
@@ -137,19 +141,19 @@ if ($result->num_rows > 0) {
                     <div class="col-lg-4 info">
                       <i class="bi bi-geo-alt"></i>
                       <h4>Location:</h4>
-                      <p><?= $street ?><br><?= $city ?></p>
+                      <p><?=$street?><br><?=$city?></p>
                     </div>
 
                     <div class="col-lg-4 info mt-4 mt-lg-0">
                       <i class="bi bi-envelope"></i>
                       <h4>Email:</h4>
-                      <p><?= $mainEmail ?><br><?= $altEmail ?></p>
+                      <p><?=$mainEmail?><br><?=$altEmail?></p>
                     </div>
 
                     <div class="col-lg-4 info mt-4 mt-lg-0">
                       <i class="bi bi-phone"></i>
                       <h4>Call:</h4>
-                      <p><?= $mainContact ?><br><?= $altContact ?></p>
+                      <p><?=$mainContact?><br><?=$altContact?></p>
                     </div>
                   </div>
                 </div>
@@ -157,50 +161,50 @@ if ($result->num_rows > 0) {
               </div>
 
             </div> -->
-          <!-- UPDATE CONTACT -->
-          <div class="row mt-5 justify-content-center">
-            <div class="col-lg-10">
-              <form action="backend/updatecontact.php" method="post" role="form" class="php-email-form">
-                <!-- @csrf -->
-                <!-- CONTACT EMAIL -->
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="email" name="email_one" class="form-control" id="name" placeholder="Your Main Email" value="<?= $mainEmail ?>">
+            <!-- UPDATE CONTACT -->
+            <div class="row mt-5 justify-content-center">
+              <div class="col-lg-10">
+                <form action="backend/updatecontact.php" method="post" role="form" class="php-email-form">
+                  <!-- @csrf -->
+                  <!-- CONTACT EMAIL -->
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="email" name="email_one" class="form-control" id="name" placeholder="Your Main Email" value="<?=$mainEmail?>">
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="email" class="form-control" name="email_two" id="email" placeholder="Your Alternative Email" value="<?=$altEmail?>">
+                    </div>
                   </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="email" class="form-control" name="email_two" id="email" placeholder="Your Alternative Email" value="<?= $altEmail ?>">
+                  <!-- CONTACT NUMBER -->
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="contact_one" class="form-control" id="name" placeholder="Your Main Contact" value="<?=$mainContact?>">
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="text" class="form-control" name="contact_two" id="email" placeholder="Your Alternative Contact" value="<?=$altContact?>">
+                    </div>
                   </div>
-                </div>
-                <!-- CONTACT NUMBER -->
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="contact_one" class="form-control" id="name" placeholder="Your Main Contact" value="<?= $mainContact ?>">
+                  <!-- STREET AND PLACE -->
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="street" class="form-control" id="name" placeholder="Street" value="<?=$street?>">
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="text" class="form-control" name="city" id="email" placeholder="Barangay, City, Province" value="<?=$city?>">
+                    </div>
                   </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="contact_two" id="email" placeholder="Your Alternative Contact" value="<?= $altContact ?>">
+                  <br><br>
+                  <div class="col-md">
+                    <input type="submit" name="register" class="btn btn-primary" value="Update Business About">
                   </div>
-                </div>
-                <!-- STREET AND PLACE -->
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <input type="text" name="street" class="form-control" id="name" placeholder="Street" value="<?= $street ?>">
-                  </div>
-                  <div class="col-md-6 form-group mt-3 mt-md-0">
-                    <input type="text" class="form-control" name="city" id="email" placeholder="Barangay, City, Province" value="<?= $city ?>">
-                  </div>
-                </div>
-                <br><br>
-                <div class="col-md">
-                  <input type="submit" name="register" class="btn btn-primary" value="Update Business About">
-                </div>
-              </form>
+                </form>
+              </div>
+
             </div>
 
           </div>
-
+          
         </div>
-
-      </div>
     </section>
 
     <!-- End Contact Section -->
