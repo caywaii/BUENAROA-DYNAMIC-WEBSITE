@@ -3,11 +3,11 @@ include '../../includes/connection.php';
 
 
 $name = $_POST['busname'];
-$motto = $_POST['busmotto'];
 
 
 
-$stmnt = $conn->prepare("UPDATE shopname SET businessName = '$name', businessMotto = '$motto'");
+
+$stmnt = $conn->prepare("UPDATE shopname SET businessName = '$name'");
 $stmnt->execute();
 
 $stmnt->close();
