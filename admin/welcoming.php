@@ -19,6 +19,8 @@ if ($result->num_rows > 0) {
     $altContact = $row['altContact'];
     $street = $row['street'];
     $city = $row['city'];
+    $image = $row['image'];
+
   }
 }
 ?>
@@ -29,6 +31,7 @@ if ($result->num_rows > 0) {
   <?php
   include('components/header.php');
   ?>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -37,13 +40,21 @@ if ($result->num_rows > 0) {
   include('components/navigation.php')
   ?>
 
-  <!-- UPDATE TITLE -->
-
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-
     <div class="hero-container">
+      <!-- LOGO PICTURE -->
+      <form action="backend/imageupl.php" method="post" enctype="multipart/form-data">
+        <label class="form-label" for="customFile">Upload Logo</label>
+        <input type="file" class="form-control" name="image" id="customFile" style="width:800px;" />
+        <div class="col-md" align="center">
+          <br>
+          <input type="submit" name="register" class="btn btn-primary" value="Update Logo">
+        </div>
+      </form>
 
+
+      <!-- BUSINESS BRANDING -->
       <form action="backend/updatebusiness.php" method="post" class="row g-3">
         <?php
 
@@ -52,6 +63,8 @@ if ($result->num_rows > 0) {
           unset($_SESSION['status']);
         }
         ?>
+        <!-- Logo Picture -->
+
         <!-- Name -->
         <div class="col-md-12" align="center">
           <label for="username" class="form-label">Business Name</label>
@@ -61,7 +74,7 @@ if ($result->num_rows > 0) {
           <input type="submit" name="register" class="btn btn-primary" value="Update Business Name">
         </div>
       </form>
-      <br>
+
       <!-- Motto -->
       <form action="backend/updatemotto.php" method="post" class="row g-2">
         <div class="col-md-12" align="center">
@@ -125,86 +138,51 @@ if ($result->num_rows > 0) {
 
         <div class="section-title">
           <h2>Contact</h2>
-          <!-- {{-- <p>Magnam dolores commodi suscipituia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-      </div>
-      <div class="map">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-      </div> --}} -->
-          <!-- <div class="container">
-            <div class="row mt-5 justify-content-center">
 
-              <div class="col-lg-10">
-
-                <div class="info-wrap">
-                  <div class="row">
-                    <div class="col-lg-4 info">
-                      <i class="bi bi-geo-alt"></i>
-                      <h4>Location:</h4>
-                      <p><?=$street?><br><?=$city?></p>
-                    </div>
-
-                    <div class="col-lg-4 info mt-4 mt-lg-0">
-                      <i class="bi bi-envelope"></i>
-                      <h4>Email:</h4>
-                      <p><?=$mainEmail?><br><?=$altEmail?></p>
-                    </div>
-
-                    <div class="col-lg-4 info mt-4 mt-lg-0">
-                      <i class="bi bi-phone"></i>
-                      <h4>Call:</h4>
-                      <p><?=$mainContact?><br><?=$altContact?></p>
-                    </div>
+          <!-- UPDATE CONTACT -->
+          <div class="row mt-5 justify-content-center">
+            <div class="col-lg-10">
+              <form action="backend/updatecontact.php" method="post" role="form" class="php-email-form">
+                <!-- @csrf -->
+                <!-- CONTACT EMAIL -->
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="email" name="email_one" class="form-control" id="name" placeholder="Your Main Email" value="<?= $mainEmail ?>">
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email_two" id="email" placeholder="Your Alternative Email" value="<?= $altEmail ?>">
                   </div>
                 </div>
-
-              </div>
-
-            </div> -->
-            <!-- UPDATE CONTACT -->
-            <div class="row mt-5 justify-content-center">
-              <div class="col-lg-10">
-                <form action="backend/updatecontact.php" method="post" role="form" class="php-email-form">
-                  <!-- @csrf -->
-                  <!-- CONTACT EMAIL -->
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input type="email" name="email_one" class="form-control" id="name" placeholder="Your Main Email" value="<?=$mainEmail?>">
-                    </div>
-                    <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <input type="email" class="form-control" name="email_two" id="email" placeholder="Your Alternative Email" value="<?=$altEmail?>">
-                    </div>
+                <!-- CONTACT NUMBER -->
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" name="contact_one" class="form-control" id="name" placeholder="Your Main Contact" value="<?= $mainContact ?>">
                   </div>
-                  <!-- CONTACT NUMBER -->
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input type="text" name="contact_one" class="form-control" id="name" placeholder="Your Main Contact" value="<?=$mainContact?>">
-                    </div>
-                    <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <input type="text" class="form-control" name="contact_two" id="email" placeholder="Your Alternative Contact" value="<?=$altContact?>">
-                    </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control" name="contact_two" id="email" placeholder="Your Alternative Contact" value="<?= $altContact ?>">
                   </div>
-                  <!-- STREET AND PLACE -->
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input type="text" name="street" class="form-control" id="name" placeholder="Street" value="<?=$street?>">
-                    </div>
-                    <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <input type="text" class="form-control" name="city" id="email" placeholder="Barangay, City, Province" value="<?=$city?>">
-                    </div>
+                </div>
+                <!-- STREET AND PLACE -->
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input type="text" name="street" class="form-control" id="name" placeholder="Street" value="<?= $street ?>">
                   </div>
-                  <br><br>
-                  <div class="col-md">
-                    <input type="submit" name="register" class="btn btn-primary" value="Update Business About">
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="text" class="form-control" name="city" id="email" placeholder="Barangay, City, Province" value="<?= $city ?>">
                   </div>
-                </form>
-              </div>
-
+                </div>
+                <br><br>
+                <div class="col-md">
+                  <input type="submit" name="register" class="btn btn-primary" value="Update Business About">
+                </div>
+              </form>
             </div>
 
           </div>
-          
+
         </div>
+
+      </div>
     </section>
 
     <!-- End Contact Section -->
@@ -214,14 +192,14 @@ if ($result->num_rows > 0) {
 
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
   <!-- {{-- <script src="assets/vendor/php-email-form/validate.js"></script> --}} -->
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 
