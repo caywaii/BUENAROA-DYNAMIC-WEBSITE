@@ -12,7 +12,7 @@
 <body>
     <div class="wrapper">
         <div class="logo">
-            <img src="assets/img/logobuena.png" alt="">
+            <img src="../assets/img/logobuena.png" alt="">
         </div>
         <?php
         session_start();

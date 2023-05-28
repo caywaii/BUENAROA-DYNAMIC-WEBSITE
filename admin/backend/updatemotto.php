@@ -6,7 +6,7 @@ $motto = $_POST['busmotto'];
 
 
 
-$stmnt = $conn->prepare("UPDATE shopname SET businessMotto = '$motto'");
+$stmnt = $conn->prepare("UPDATE shopname SET businessMotto = '". mysqli_real_escape_string($conn, $motto) . "'");
 $stmnt->execute();
 
 $stmnt->close();

@@ -7,7 +7,7 @@ $name = $_POST['busname'];
 
 
 
-$stmnt = $conn->prepare("UPDATE shopname SET businessName = '$name'");
+$stmnt = $conn->prepare("UPDATE shopname SET businessName = '". mysqli_real_escape_string($conn, $name) . "'");
 $stmnt->execute();
 
 $stmnt->close();

@@ -6,7 +6,7 @@ $starter = $_POST['aboutstarter'];
 
 
 
-$stmnt = $conn->prepare("UPDATE shopname SET aboutStarter = '$starter'");
+$stmnt = $conn->prepare("UPDATE shopname SET aboutStarter = '". mysqli_real_escape_string($conn, $starter) . "'");
 $stmnt->execute();
 
 $stmnt->close();
