@@ -123,29 +123,6 @@ if (isset($_POST['submit'])) { //Check if user enter data
       <div class="container">
         <div class="section-title">
           <h2>Gallery</h2>
-          <form action="backend/galleryupl.php" method="post" enctype="multipart/form-data" class="row g-3">
-            <!-- Logo Picture -->
-            <div class="row g-3">
-              <div class="col-md-5" align="center">
-                <input type="file" class="form-control" name="image" id="customFile" />
-              </div>
-              <div class="col-md-5">
-                <select class="form-select" required name="gallery" id="amount" aria-label="Default select example">
-                  <option value="" readonly>Identify</option>
-                  <option value="Event Styling">Event Styling</option>
-                  <option value="Catering & Food">Catering & Food</option>
-                  <option value="Lights and Sound">Lights and Sound</option>
-                </select>
-              </div>
-              <br>
-              <div class="col-md-2" align="center">
-                <input type="submit" name="register" class="btn btn-primary" value="Upload Photo">
-              </div>
-            </div>
-
-          </form>
-
-          <p>Upload photo you want to show in the Gallery</p>
         </div>
 
         <div class="row">
