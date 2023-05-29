@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
+          <li><a class="nav-link scrollto" href="welcoming.php#about">About</a></li>
           <li class="dropdown"><a href="#"><span><b>Inclusion</b></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <!-- <li class="dropdown"><a href="#"><span>Event Styling</span> <i class="bi bi-chevron-right"></i></a>  -->
@@ -48,8 +48,8 @@ if ($result->num_rows > 0) {
               <li><a href="sound.php">Sound System and Lights Rental</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto"  href="index.php#portfolio">Gallery</a></li>
-          <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
+          <li><a class="nav-link scrollto"  href="welcoming.php#portfolio">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="welcoming.php#contact">Contact</a></li>
         </ul>
 
         <i class="bi bi-list mobile-nav-toggle"></i>
