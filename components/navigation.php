@@ -24,6 +24,9 @@ if ($result->num_rows > 0) {
     $instaLink = $row['InstagramLink'];
   }
 }
+
+$sqlGallery = "SELECT * FROM gallery";
+$resultGall = $conn->query($sqlGallery);
 ?>
  <!-- ======= Header ======= -->
  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
