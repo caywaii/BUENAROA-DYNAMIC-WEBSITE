@@ -26,31 +26,6 @@ if (isset($_POST['submit'])) { //Check if user enter data
   }
 }
 ?>
-<?php
-//SELECTING QUERIES
-include 'includes/connection.php';
-
-
-$sql = "SELECT * FROM shopname";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-
-    //Declared Variables
-    $business_name = $row['businessName'];
-    $business_motto = $row['businessMotto'];
-    $business_starter = $row['aboutStarter'];
-    $business_about = $row['aboutMessage'];
-    $mainEmail = $row['mainEmail'];
-    $altEmail = $row['altEmail'];
-    $mainContact = $row['mainContact'];
-    $altContact = $row['altContact'];
-    $street = $row['street'];
-    $city = $row['city'];
-    $image = $row['image'];
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -94,53 +69,9 @@ if ($result->num_rows > 0) {
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <div class="logo">
-        <h1><a href="index.php"><img src="<?=$image?>"></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.php">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
-          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <!-- <li class="dropdown"><a href="#"><span>Event Styling</span> <i class="bi bi-chevron-right"></i></a>  -->
-              <li class="dropdown"><a href="eventgallery.php"><span>Event Planning and Styling</span></a>
-                <!-- <ul>
-                  <li><a href="#">Balloon Arrangement</a></li>
-                  <li><a href="#">Flower Arrangement</a></li>
-                  <li><a href="#">Back Drop</a></li>
-                  <li><a href="#">Machines</a></li>
-                </ul> -->
-              </li>
-              <li class="dropdown"><a href="catergallery.php"><span>Catering Services</span></a>
-                <!-- <ul>
-                  <li><a href="#">Appetizers</a></li>
-                  <li><a href="#">Lunch</a></li>
-                  <li><a href="#">Snacks</a></li>
-                  <li><a href="#">Drinks</a></li>
-                  <li><a href="#">Dessert</a></li>
-                </ul>  -->
-              </li>
-
-              <li><a href="soundgallery.php">Sound System and Lights Rental</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" id="inclusion-nav" href="inclusion.php"><b>Inclusions</b></a></li>
-          <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
-        </ul>
-
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
+  <?php
+  include('components/navigation.php')
+  ?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -164,7 +95,7 @@ if ($result->num_rows > 0) {
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-            <?= $business_about ?>
+              <?= $business_about ?>
             </p>
 
             <p class="fst-italic">
@@ -188,8 +119,122 @@ if ($result->num_rows > 0) {
 
 
     <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
 
-    <!-- End Portfolio Section -->
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Magnam dolores commodi suscipit onsequatur ex aliquid fuga eum quidem</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 2</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
 
     <!-- ======= Team Section ======= -->
 
@@ -223,19 +268,19 @@ if ($result->num_rows > 0) {
                     <div class="col-lg-4 info">
                       <i class="bi bi-geo-alt"></i>
                       <h4>Location:</h4>
-                      <p><?=$street?><br><?=$city?></p>
+                      <p><?= $street ?><br><?= $city ?></p>
                     </div>
 
                     <div class="col-lg-4 info mt-4 mt-lg-0">
                       <i class="bi bi-envelope"></i>
                       <h4>Email:</h4>
-                      <p><?=$mainEmail?><br><?=$altEmail?></p>
+                      <p><?= $mainEmail ?><br><?= $altEmail ?></p>
                     </div>
 
                     <div class="col-lg-4 info mt-4 mt-lg-0">
                       <i class="bi bi-phone"></i>
                       <h4>Call:</h4>
-                      <p><?=$mainContact?><br><?=$altContact?></p>
+                      <p><?= $mainContact ?><br><?= $altContact ?></p>
                     </div>
                   </div>
                 </div>
@@ -280,46 +325,46 @@ if ($result->num_rows > 0) {
 
   </main><!-- End #main -->
 
-<!-- ======= Footer ======= -->
-<footer id="footer">
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
 
-<div class="footer-top">
+    <div class="footer-top">
 
-  <div class="container">
+      <div class="container">
 
-    <div class="row  justify-content-center">
-      <div class="col-lg-6">
-        <h3>Follow Us:</h3>
-        <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
+        <div class="row  justify-content-center">
+          <div class="col-lg-6">
+            <h3>Follow Us:</h3>
+            <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+
       </div>
     </div>
 
-    <div class="social-links">
-      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Buenaroa</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vlava-free-bootstrap-one-page-template/ -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      </div>
     </div>
+  </footer><!-- End Footer -->
 
-  </div>
-</div>
-
-<div class="container footer-bottom clearfix">
-  <div class="copyright">
-    &copy; Copyright <strong><span>Buenaroa</span></strong>. All Rights Reserved
-  </div>
-  <div class="credits">
-    <!-- All the links in the footer should remain intact. -->
-    <!-- You can delete the links only if you purchased the pro version. -->
-    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/vlava-free-bootstrap-one-page-template/ -->
-    <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-  </div>
-</div>
-</footer><!-- End Footer -->
-
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -14,8 +14,8 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container">
-            <h1>INCLUSIONS</h1>
-            <a href="#about" class="btn-get-started scrollto">Dive Right In</a>
+            <h1>CATERING SERVICES</h1>
+            <a href="#about" class="btn-get-started scrollto">View Gallery</a>
         </div>
     </section><!-- End Hero -->
 
@@ -50,11 +50,11 @@
                 <div class="section-title">
                     <h2>Contact</h2>
                     <!-- {{-- <p>Magnam dolores commodi suscipituia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-      </div>
-      <div class="map">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-      </div> --}} -->
+</div>
+</div>
+<div class="map">
+<iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+</div> --}} -->
                     <div class="container">
                         <div class="row mt-5 justify-content-center">
 
@@ -127,7 +127,6 @@
     <?php
     include('components/js.php');
     ?>
-
 </body>
 
 </html>
