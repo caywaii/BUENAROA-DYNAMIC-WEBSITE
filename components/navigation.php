@@ -20,6 +20,8 @@ if ($result->num_rows > 0) {
     $street = $row['street'];
     $city = $row['city'];
     $image = $row['image'];
+    $fbLink = $row['facebookLink'];
+    $instaLink = $row['InstagramLink'];
   }
 }
 ?>

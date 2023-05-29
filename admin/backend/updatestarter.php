@@ -12,7 +12,7 @@ $stmnt->execute();
 $stmnt->close();
 $conn->close();
 
-$_SESSION['status'] = "Your Business Starter is now updated successfully";
+$_SESSION['status'] = "Starter is now updated successfully";
 header('Location: ' . $home . 'admin/welcoming.php');
 
 

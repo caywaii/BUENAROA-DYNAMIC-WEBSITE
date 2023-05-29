@@ -120,9 +120,7 @@
 <!-- End Contact Section -->
 
 </main><!-- End #main -->
-<?php
-include('components/footer.php');
-?>
+
 <?php
 include('components/js.php');
 ?>

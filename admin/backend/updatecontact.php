@@ -17,6 +17,6 @@ $stmnt->execute();
 $stmnt->close();
 $conn->close();
 
-$_SESSION['status'] = "Your Business Name is now updated successfully";
+$_SESSION['status'] = "Your Contact/s is now updated successfully";
 header('Location: ' . $home . 'admin/welcoming.php');
 ?>
