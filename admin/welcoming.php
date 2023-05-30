@@ -229,13 +229,8 @@ $resultGall = $conn->query($sqlGallery);
             while ($rowGall = $resultGall->fetch_assoc()) :
           ?>
               <div class="col-lg-4 col-md-6 portfolio-item <?= $rowGall['imageIdentifier'] ?>">
+                <a href="backend/id_removegallery.php?gallery_id=<?= $rowGall['gallery_id'] ?>" id="delete-word" title="Delete"><i class="bi bi-dash-circle-fill"></i></a>
                 <img src="../<?= $rowGall['imagePath'] ?>" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <h4>Card 3</h4>
-                  <p>Card</p>
-                  <a href="../assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-                </div>
               </div>
           <?php
             endwhile;

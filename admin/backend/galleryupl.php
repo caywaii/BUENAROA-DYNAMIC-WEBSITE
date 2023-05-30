@@ -1,6 +1,9 @@
 <?php
 include '../../includes/connection.php';
 
+$requiredWidth = 2048;
+$requiredHeight = 1365;
+
 $identify = $_POST['gallery'];
 $gallery = $_FILES['image'];
 function generateRandomString($length = 8){
@@ -23,11 +26,23 @@ if(isset($_FILES['image'])){
 
         $destination = $uploadDir . $fileName;
 
-        if(move_uploaded_file($file['tmp_name'], $destination)){
-            echo 'Image Uploaded and Copied Successfully';
+        $fileTmp = $file['tmp_name'];
+        $imageSize = getimagesize($fileTmp);
+        $imageWidth = $imageSize[0];
+        $imageHeight = $imageSize[1];
+
+        if($imageWidth == $requiredWidth && $imageHeight == $requiredHeight){
+            if(move_uploaded_file($file['tmp_name'], $destination)){
+                echo 'Image Uploaded and Copied Successfully';
+            }else{
+                echo 'Failed to Copy the Uploaded File';
+            }
         }else{
-            echo 'Failed to Copy the Uploaded File';
+            $_SESSION['status'] = 'Required Size: 2048 x 1365';
+            header('Location: ' . $home . 'admin/welcoming.php');
+            return;
         }
+        
     }else{
         echo 'Error Uploading the image. Please Try Again';
     }
