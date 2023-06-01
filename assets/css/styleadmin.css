@@ -714,15 +714,15 @@
     }
   }
   
-  /*--------------------------------------------------------------
-  # Portfolio
-  --------------------------------------------------------------*/
+  #portfolio{
+    background-color: #FFF1DD;
+  }
   .portfolio #portfolio-flters {
     padding: 0;
     margin: 0 auto 25px auto;
     list-style: none;
     text-align: center;
-    background: white;
+    background: #FFF1DD;
     border-radius: 50px;
     padding: 2px 15px;
   }
@@ -742,7 +742,7 @@
   
   .portfolio #portfolio-flters li:hover,
   .portfolio #portfolio-flters li.filter-active {
-    color: #85b0be;
+    color: #A0806E;
   }
   
   .portfolio #portfolio-flters li:last-child {
@@ -751,7 +751,9 @@
   
   .portfolio .portfolio-item {
     margin-bottom: 30px;
+  
   }
+  
   
   .portfolio .portfolio-item .portfolio-info {
     opacity: 0;
@@ -772,6 +774,12 @@
     color: #052c3f;
   }
   
+  .bi-dash-circle-fill{
+    color: #e15712;
+  }
+  #delete-word{
+    color: #e15712;
+  }
   .portfolio .portfolio-item .portfolio-info p {
     color: #0d6e9e;
     font-size: 14px;
@@ -844,11 +852,12 @@
     height: 12px;
     background-color: #fff;
     opacity: 1;
-    border: 1px solid #85b0be;
+    border: 1px solid #593127;
   }
   
   .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #85b0be;
+    background-color: #593127;
+   
   }
   
   .portfolio-details .portfolio-info {
