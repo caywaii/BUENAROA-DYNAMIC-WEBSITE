@@ -27,6 +27,17 @@ if ($result->num_rows > 0) {
 
 $sqlGallery = "SELECT * FROM gallery";
 $resultGall = $conn->query($sqlGallery);
+
+$sqlFiles = "SELECT * FROM file";
+$resultFiles = $conn->query($sqlFiles);
+if ($resultFiles->num_rows > 0) {
+  while ($rowFiles = $resultFiles->fetch_assoc()) {
+
+    //Declared Variables
+    $catering_one = $rowFiles['catering_one'];
+  }
+}
+
 ?>
  <!-- ======= Header ======= -->
  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
@@ -44,26 +55,8 @@ $resultGall = $conn->query($sqlGallery);
           <li><a class="nav-link scrollto" href="index.php#about">About</a></li>
           <li class="dropdown"><a href="#"><span><b>Inclusion</b></span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <!-- <li class="dropdown"><a href="#"><span>Event Styling</span> <i class="bi bi-chevron-right"></i></a>  -->
-              <li class="dropdown"><a href="event.php"><span>Event Planning and Styling</span></a>
-                <!-- <ul>
-                  <li><a href="#">Balloon Arrangement</a></li>
-                  <li><a href="#">Flower Arrangement</a></li>
-                  <li><a href="#">Back Drop</a></li>
-                  <li><a href="#">Machines</a></li>
-                </ul> -->
-              </li>
-              <li class="dropdown"><a href="catering.php"><span>Catering Services</span></a>
-                <!-- <ul>
-                  <li><a href="#">Appetizers</a></li>
-                  <li><a href="#">Lunch</a></li>
-                  <li><a href="#">Snacks</a></li>
-                  <li><a href="#">Drinks</a></li>
-                  <li><a href="#">Dessert</a></li>
-                </ul>  -->
-              </li>
-
-              <li><a href="sound.php">Sound System and Lights Rental</a></li>
+              <li><a href="event.php">Event Planning & Styling</a></li>
+              <li><a href="catering.php">Catering Services</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto"  href="index.php#portfolio">Gallery</a></li>

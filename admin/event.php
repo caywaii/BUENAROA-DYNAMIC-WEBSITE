@@ -11,118 +11,103 @@
     <?php
     include('components/navigation.php')
     ?>
-    <!-- ======= Hero Section ======= -->
-    <section id="hero">
-        <div class="hero-container">
-            <h1>EVENT PLANNING AND STYLING</h1>
-            <a href="#about" class="btn-get-started scrollto">View Gallery</a>
-        </div>
-    </section><!-- End Hero -->
 
-    <main id="main">
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq">
+        <div class="container">
 
-<!-- ======= About Section ======= -->
-<section id="about" class="about">
-    <div class="container">
-
-        <div class="row content">
-            <div class="col-lg-6">
-                <h2>About Us</h2>
-                <h3><?= $business_starter ?></h3>
+            <div class="section-title">
+                <h2>Event Planning & Styling</h2>
+                <p>Feel free to explore the various styling options available for you to check out.</p>
             </div>
-            <div class="col-lg-6 pt-4 pt-lg-0">
-                <p>
-                    <?= $business_about ?>
-                </p>
 
-                <p class="fst-italic">
-                    We are driven by passion and dedicated to crafting truly unique and memorable experiences.
-                </p>
-            </div>
-        </div>
+            <div class="row  d-flex align-items-stretch">
 
-    </div>
-</section>
-<!-- ======= Contact Section ======= -->
-<section id="contact" class="contact section-bg">
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Contact</h2>
-            <!-- {{-- <p>Magnam dolores commodi suscipituia fugiat sit in iste officiis commodi quidem hic quas.</p>
-</div>
-</div>
-<div class="map">
-<iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
-</div> --}} -->
-            <div class="container">
-                <div class="row mt-5 justify-content-center">
-
-                    <div class="col-lg-10">
-
-                        <div class="info-wrap">
-                            <div class="row">
-                                <div class="col-lg-4 info">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h4>Location:</h4>
-                                    <p><?= $street ?><br><?= $city ?></p>
-                                </div>
-
-                                <div class="col-lg-4 info mt-4 mt-lg-0">
-                                    <i class="bi bi-envelope"></i>
-                                    <h4>Email:</h4>
-                                    <p><?= $mainEmail ?><br><?= $altEmail ?></p>
-                                </div>
-
-                                <div class="col-lg-4 info mt-4 mt-lg-0">
-                                    <i class="bi bi-phone"></i>
-                                    <h4>Call:</h4>
-                                    <p><?= $mainContact ?><br><?= $altContact ?></p>
-                                </div>
-                            </div>
+                <div class="col-lg-6 faq-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h4>SEMI FULL EVENT STYLING</h4>
+                    <form action="backend/event_file/event_one.php" method="post" enctype="multipart/form-data">
+                        <p>
+                            <input type="file" class="form-control" name="pdfFile" id="customFile" /> <br>
+                        <div align="center">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Upload File" id="btnView">
                         </div>
 
-                    </div>
+                    </form>
+                    </p>
+
 
                 </div>
 
-                <div class="row mt-5 justify-content-center">
-                    <div class="col-lg-10">
-                        <form action="contact.php" method="post" role="form" class="php-email-form">
-                            <!-- @csrf -->
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                            </div>
-                            <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit" name="submit">Send Message</button></div>
-                        </form>
-                    </div>
+                <div class="col-lg-6 faq-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h4>FULL STYLING CUSTOMIZED PACKAGE</h4>
+                    <form action="backend/event_file/event_two.php" method="post" enctype="multipart/form-data">
+                        <p>
+                            <input type="file" class="form-control" name="pdfFile" id="customFile" /> <br>
+                        <div align="center">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Upload File" id="btnView">
+                        </div>
+
+                    </form>
+                    </p>
+                </div>
+
+                <div class="col-lg-6 faq-item">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <h4>A LA CARTE SERVICES</h4>
+                   <form action="backend/event_file/event_three.php" method="post" enctype="multipart/form-data">
+                        <p>
+                            <input type="file" class="form-control" name="pdfFile" id="customFile" /> <br>
+                        <div align="center">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Upload File" id="btnView">
+                        </div>
+
+                    </form>
+                    </p>
 
                 </div>
+
+
+                <!-- <div class="col-lg-6 faq-item">
+                    <i class="bx bx-help-circle"></i>
+                    <h4>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?</h4>
+                    <p>
+                        Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 faq-item">
+                    <i class="bx bx-help-circle"></i>
+                    <h4>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h4>
+                    <p>
+                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim.
+                    </p>
+                </div>
+
+                <div class="col-lg-6 faq-item">
+                    <i class="bx bx-help-circle"></i>
+                    <h4>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h4>
+                    <p>
+                        Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+                    </p>
+                </div>
+
+                <div class="col-lg-6 faq-item">
+                    <i class="bx bx-help-circle"></i>
+                    <h4>Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor?</h4>
+                    <p>
+                        Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+                    </p>
+                </div> -->
 
             </div>
-</section>
 
-<!-- End Contact Section -->
-
-</main><!-- End #main -->
-<?php
-include('components/js.php');
-?>
+        </div>
+    </section><!-- End Frequently Asked Questions Section -->
+    <?php
+    include('components/js.php');
+    ?>
 </body>
+
 </html>

@@ -80,6 +80,7 @@ $resultGall = $conn->query($sqlGallery);
           </li>
           <li><a class="nav-link scrollto" href="index.php#portfolio">Gallery</a></li>
           <li><a class="nav-link scrollto" href="index.php#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="backend/logout.php" id="logout">Log Out</a></li>
         </ul>
 
         <i class="bi bi-list mobile-nav-toggle"></i>
